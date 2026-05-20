@@ -1,7 +1,7 @@
 /* ============================================================
    MADE IN TURAN — main.js
    Modüller: Header Scroll | Hamburger Menü |
-             Scroll Reveal | Nav Active State | Form Validation
+             Scroll Reveal | Nav Aktif Durum (URL) | Form Validasyon
 ============================================================ */
 
 (function () {
@@ -21,7 +21,7 @@
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); // ilk yüklemede de çalıştır
+  onScroll();
 
 
   /* ----------------------------------------------------------
@@ -55,12 +55,10 @@
     }
   });
 
-  // Mobil linke tıklayınca menüyü kapat
   mobileLinks.forEach(function (link) {
     link.addEventListener('click', closeMenu);
   });
 
-  // Dışarıya tıklayınca kapat
   document.addEventListener('click', function (e) {
     if (
       mobileNav.classList.contains('open') &&
@@ -71,7 +69,6 @@
     }
   });
 
-  // Escape tuşu ile kapat
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
       closeMenu();
@@ -104,7 +101,6 @@
       revealObserver.observe(el);
     });
   } else {
-    // IntersectionObserver desteklenmiyorsa tümünü göster
     revealElements.forEach(function (el) {
       el.classList.add('visible');
     });
@@ -112,32 +108,21 @@
 
 
   /* ----------------------------------------------------------
-     4. NAV ACTIVE STATE — scroll pozisyonuna göre nav link vurgula
+     4. NAV AKTİF DURUM — URL'e göre mevcut sayfayı vurgula
   ---------------------------------------------------------- */
-  const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
 
-  function updateActiveNav() {
-    const scrollY = window.scrollY + 120;
+  (function setActiveNavByURL() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-    sections.forEach(function (section) {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      const id = section.getAttribute('id');
-
-      if (scrollY >= top && scrollY < top + height) {
-        navLinks.forEach(function (link) {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + id) {
-            link.classList.add('active');
-          }
-        });
+    navLinks.forEach(function (link) {
+      link.classList.remove('active');
+      const href = link.getAttribute('href');
+      if (href && href === currentPage) {
+        link.classList.add('active');
       }
     });
-  }
-
-  window.addEventListener('scroll', updateActiveNav, { passive: true });
-  updateActiveNav();
+  })();
 
 
   /* ----------------------------------------------------------
@@ -150,7 +135,6 @@
       const requiredFields = applyForm.querySelectorAll('[required]');
       let isValid = true;
 
-      // Önceki hata stillerini temizle
       requiredFields.forEach(function (field) {
         field.style.borderColor = '';
       });
@@ -174,7 +158,6 @@
 
       if (!isValid) {
         e.preventDefault();
-        // İlk hatalı alana scroll et
         const firstError = applyForm.querySelector('[style*="e05555"]');
         if (firstError) {
           firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -182,7 +165,6 @@
       }
     });
 
-    // Kullanıcı yazmaya başlayınca hata stilini kaldır
     applyForm.querySelectorAll('.form-input').forEach(function (input) {
       input.addEventListener('input', function () {
         input.style.borderColor = '';

@@ -1119,6 +1119,88 @@ button {
 }
 
 /* ============================================================
+   SAYFA HERO — Alt sayfalar için başlık bandı
+============================================================ */
+.page-hero {
+  background-color: var(--color-bg-2);
+  padding-top: calc(var(--header-height) + var(--space-2xl));
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.page-hero-title {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1.15;
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.02em;
+  max-width: 800px;
+}
+
+.page-hero-desc {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  max-width: 580px;
+}
+
+/* ============================================================
+   SAYFA CTA — Alt sayfa alt CTA bandı
+============================================================ */
+.page-cta {
+  background: var(--color-bg-card);
+  border-top: 1px solid var(--color-border);
+}
+
+.page-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.page-cta-inner .section-title {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin-bottom: var(--space-xs);
+}
+
+/* ============================================================
+   BÖLÜM DEVAM LİNKİ
+============================================================ */
+.section-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+  transition: gap var(--transition), color var(--transition);
+}
+
+.section-more::after {
+  content: '→';
+}
+
+.section-more:hover {
+  color: #00ddd0;
+  gap: 0.75rem;
+}
+
+/* ============================================================
+   HAKKIMIZDA ÖZET — Ana sayfada kompakt kullanım
+============================================================ */
+.about-summary {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+/* ============================================================
    SCROLL REVEAL ANİMASYONLARI
 ============================================================ */
 .reveal {
@@ -1281,6 +1363,18 @@ button {
 
   .footer-brand {
     grid-column: span 1;
+  }
+
+  /* Sayfa CTA */
+  .page-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-cta-inner .btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
   }
 }
 

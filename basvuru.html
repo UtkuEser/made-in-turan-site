@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Made in Turan başvuru formu — Bölgesel büyüme, temsilcilik, partner bulma ve stratejik açılım süreçleri için iletişime geçin." />
+  <meta property="og:title" content="Başvuru — Made in Turan" />
+  <meta property="og:type" content="website" />
+  <title>Başvuru — Made in Turan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner container">
+      <a href="index.html" class="header-logo" aria-label="Made in Turan Ana Sayfa">
+        <img src="assets/images/madeinturan_logo.jpg" alt="Made in Turan" class="logo-img" />
+      </a>
+
+      <nav class="main-nav" aria-label="Ana navigasyon">
+        <ul class="nav-list">
+          <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+          <li><a href="hizmetler.html" class="nav-link">Hizmetler</a></li>
+          <li><a href="faaliyet-bolgeleri.html" class="nav-link">Bölgeler</a></li>
+          <li><a href="referanslar.html" class="nav-link">Referanslar</a></li>
+          <li><a href="etkinlikler.html" class="nav-link">Etkinlikler</a></li>
+          <li><a href="temsilcilikler.html" class="nav-link">Temsilcilikler</a></li>
+          <li><a href="basvuru.html" class="nav-link nav-link--cta">Başvuru</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <ul class="mobile-nav-list">
+        <li><a href="hakkimizda.html" class="mobile-nav-link">Hakkımızda</a></li>
+        <li><a href="hizmetler.html" class="mobile-nav-link">Hizmetler</a></li>
+        <li><a href="faaliyet-bolgeleri.html" class="mobile-nav-link">Bölgeler</a></li>
+        <li><a href="referanslar.html" class="mobile-nav-link">Referanslar</a></li>
+        <li><a href="etkinlikler.html" class="mobile-nav-link">Etkinlikler</a></li>
+        <li><a href="temsilcilikler.html" class="mobile-nav-link">Temsilcilikler</a></li>
+        <li><a href="basvuru.html" class="mobile-nav-link mobile-nav-link--cta">Başvuru</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- SAYFA HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-label reveal">Başvuru</span>
+        <h1 class="page-hero-title reveal">Markanızı Yeni Pazarlara Taşımak İçin İlk Adımı Atın</h1>
+        <p class="page-hero-desc reveal">Bölgesel büyüme, temsilcilik, partner bulma ve stratejik açılım süreçleriniz için formu doldurun; sizinle iletişime geçelim.</p>
+      </div>
+    </section>
+
+    <!-- BAŞVURU FORMU -->
+    <section class="section basvuru">
+      <div class="container">
+        <div class="apply-grid">
+          <div class="apply-content reveal">
+            <span class="section-label">İletişim</span>
+            <h2 class="section-title">Sizinle Konuşmaktan Memnuniyet Duyarız</h2>
+            <p class="apply-desc">Formu doldurduktan sonra ekibimiz en geç 2 iş günü içinde sizinle iletişime geçecektir.</p>
+
+            <div class="apply-contact-block" style="margin-top: var(--space-xl);">
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.375rem;">E-posta</p>
+              <a href="mailto:info@madeinturan.com" style="font-size: 0.95rem; color: var(--color-accent);">info@madeinturan.com</a>
+            </div>
+          </div>
+
+          <div class="apply-form-wrap reveal">
+            <form
+              class="apply-form"
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+              id="apply-form"
+              novalidate
+            >
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="ad-soyad" class="form-label">Ad Soyad <span class="required" aria-hidden="true">*</span></label>
+                  <input type="text" id="ad-soyad" name="ad_soyad" class="form-input" placeholder="Adınız Soyadınız" required />
+                </div>
+                <div class="form-group">
+                  <label for="sirket" class="form-label">Şirket Adı <span class="required" aria-hidden="true">*</span></label>
+                  <input type="text" id="sirket" name="sirket_adi" class="form-input" placeholder="Şirketinizin adı" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="sektor" class="form-label">Sektör</label>
+                  <input type="text" id="sektor" name="sektor" class="form-input" placeholder="Faaliyet sektörünüz" />
+                </div>
+                <div class="form-group">
+                  <label for="hedef-pazar" class="form-label">Hedef Pazar / İlgi Alanı</label>
+                  <input type="text" id="hedef-pazar" name="hedef_pazar" class="form-input" placeholder="Kazakistan, Dubai, vb." />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="eposta" class="form-label">E-posta <span class="required" aria-hidden="true">*</span></label>
+                  <input type="email" id="eposta" name="email" class="form-input" placeholder="ornek@sirket.com" required />
+                </div>
+                <div class="form-group">
+                  <label for="telefon" class="form-label">Telefon</label>
+                  <input type="tel" id="telefon" name="telefon" class="form-input" placeholder="+90 5xx xxx xx xx" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="konu" class="form-label">Başvuru Konusu</label>
+                <select id="konu" name="konu" class="form-input" style="appearance: none; cursor: pointer;">
+                  <option value="">Seçiniz</option>
+                  <option value="pazar-girisi">Pazar Girişi ve Büyüme</option>
+                  <option value="partner-distributor">Partner / Distribütör Bulma</option>
+                  <option value="sirket-kurulumu">Şirket Kurulumu / Temsilcilik</option>
+                  <option value="yatirimci-eslesmesi">Yatırımcı Eşleşmesi</option>
+                  <option value="franchise">Franchise Yapılanması</option>
+                  <option value="etkinlik">Etkinlik / Resmi Sefer Katılımı</option>
+                  <option value="temsilcilik-basvurusu">Temsilcilik Başvurusu</option>
+                  <option value="diger">Diğer</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="mesaj" class="form-label">Mesaj</label>
+                <textarea id="mesaj" name="mesaj" class="form-input form-textarea" rows="5" placeholder="Projeniz, hedef pazarınız ve beklentileriniz hakkında kısa bilgi verebilirsiniz."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full">Başvuruyu Gönder</button>
+              <p class="form-note"><span class="required">*</span> zorunlu alanlar</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link" aria-label="Made in Turan Ana Sayfa">
+            <img src="assets/images/madeinturan_logo.jpg" alt="Made in Turan" class="footer-logo-img" />
+          </a>
+          <p class="footer-tagline">Türk dünyasında ticaret, yatırım ve stratejik büyüme için bölgesel ağ.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigasyon">
+          <h4 class="footer-nav-title">Sayfalar</h4>
+          <ul class="footer-nav-list">
+            <li><a href="hakkimizda.html" class="footer-nav-link">Hakkımızda</a></li>
+            <li><a href="hizmetler.html" class="footer-nav-link">Hizmetler</a></li>
+            <li><a href="faaliyet-bolgeleri.html" class="footer-nav-link">Faaliyet Bölgeleri</a></li>
+            <li><a href="referanslar.html" class="footer-nav-link">Referanslar</a></li>
+            <li><a href="etkinlikler.html" class="footer-nav-link">Etkinlikler</a></li>
+            <li><a href="temsilcilikler.html" class="footer-nav-link">Temsilcilikler</a></li>
+            <li><a href="basvuru.html" class="footer-nav-link">Başvuru</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact">
+          <h4 class="footer-nav-title">İletişim</h4>
+          <address class="footer-address">
+            <p>Made in Turan</p>
+            <p>Türkiye &amp; Bölgesel Ofisler</p>
+            <a href="mailto:info@madeinturan.com" class="footer-contact-link">info@madeinturan.com</a>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 Made in Turan. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -8,12 +8,15 @@
   'use strict';
 
   /* ----------------------------------------------------------
-     1. HEADER SCROLL — scroll geçince blur/arka plan uygula
+     1. HEADER SCROLL — scroll geçince açık arka plan uygula
+     Ana sayfada hero video üzerinde header transparan başlar.
+     Alt sayfalarda (hero yok) header anında scrolled olur.
   ---------------------------------------------------------- */
   const header = document.getElementById('site-header');
+  const hasDarkHero = !!document.querySelector('.hero');
 
   function onScroll() {
-    if (window.scrollY > 20) {
+    if (!hasDarkHero || window.scrollY > 20) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');

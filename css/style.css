@@ -418,46 +418,36 @@ button {
 }
 
 /* ============================================================
-   HERO — Koyu video, değişmez
+   HERO — Kurumsal gradient + slider
 ============================================================ */
 .hero {
   position: relative;
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
+  min-height: clamp(620px, 76svh, 780px);
   overflow: hidden;
+  background:
+    radial-gradient(ellipse at 68% 42%, rgba(24, 185, 199, 0.09) 0%, transparent 42%),
+    radial-gradient(ellipse at 12% 88%, rgba(8, 59, 92, 0.45) 0%, transparent 36%),
+    linear-gradient(148deg, #051422 0%, #062A40 38%, #083B5C 100%);
 }
 
-.hero-video-wrap {
+.hero::before {
+  content: '';
   position: absolute;
   inset: 0;
+  background:
+    linear-gradient(rgba(24, 185, 199, 0.032) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 185, 199, 0.032) 1px, transparent 1px);
+  background-size: 64px 64px;
   z-index: 0;
-}
-
-.hero-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(5, 23, 38, 0.88) 0%,
-    rgba(8, 29, 52, 0.72) 50%,
-    rgba(5, 23, 38, 0.84) 100%
-  );
+  pointer-events: none;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  padding-top: calc(var(--header-height) + 3rem);
-  padding-bottom: 5rem;
-  max-width: 820px;
+  padding-top: calc(var(--header-height) + 2rem);
+  padding-bottom: 3.5rem;
+  width: 100%;
 }
 
 .hero-eyebrow {
@@ -487,7 +477,7 @@ button {
   font-size: clamp(0.95rem, 1.8vw, 1.1rem);
   line-height: 1.78;
   color: rgba(232, 237, 243, 0.78);
-  max-width: 580px;
+  max-width: 520px;
   margin-bottom: var(--space-xl);
 }
 
@@ -495,14 +485,6 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
-}
-
-.hero-scroll-hint {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
 }
 
 .scroll-line {
@@ -1621,19 +1603,138 @@ button {
 }
 
 /* ============================================================
-   HERO SLIDER — Slider yapısına hazır wrapper (şimdilik tek slide)
+   HERO SLIDER
 ============================================================ */
 .hero-slider {
   position: relative;
   z-index: 1;
   width: 100%;
-  display: flex;
-  align-items: center;
+  min-height: clamp(620px, 76svh, 780px);
 }
 
 .hero-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero-slide.active .hero-text {
+  animation: heroTextIn 0.7s ease both;
+  animation-delay: 0.25s;
+}
+
+@keyframes heroTextIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* İki kolon düzen — metin sol, görsel sağ */
+.hero-layout {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xl);
   width: 100%;
 }
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+/* SVG network görsel */
+.hero-visual {
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+  opacity: 0.82;
+}
+
+.hero-network-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hero-pulse-ring {
+  transform-origin: 140px 140px;
+  animation: heroPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes heroPulse {
+  0%, 100% { transform: scale(1);   opacity: 0.20; }
+  50%       { transform: scale(1.7); opacity: 0; }
+}
+
+/* Dots */
+.hero-dots {
+  position: absolute;
+  bottom: 2.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.28);
+  transition: background var(--transition), width var(--transition);
+}
+
+.hero-dot.active {
+  width: 24px;
+  background: var(--color-accent);
+}
+
+.hero-dot:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.52);
+}
+
+/* Oklar */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.65);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.hero-arrow:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.32);
+  color: #ffffff;
+}
+
+.hero-arrow--prev { left: 1.5rem; }
+.hero-arrow--next { right: 1.5rem; }
 
 /* ============================================================
    SCROLL REVEAL
@@ -1676,6 +1777,10 @@ button {
     grid-template-columns: repeat(4, 1fr);
   }
 
+  /* Hero — tablette görsel küçültülür */
+  .hero-visual { width: 220px; height: 220px; }
+  .hero-arrow { display: none; }
+
   /* Köprü — tablet: yatay düzen koru, biraz daha dar */
   .kopru-grid {
     grid-template-columns: 1fr 320px;
@@ -1717,22 +1822,73 @@ button {
     --space-lg:  1.75rem;
   }
 
-  /* Header */
+  /* Header — mobilde her zaman beyaz, hero üstüne bindirmez */
+  .site-header {
+    background: rgba(250, 253, 255, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 1px 0 rgba(8, 59, 92, 0.05), 0 4px 32px rgba(8, 59, 92, 0.11);
+  }
+  .hamburger-line { background: var(--color-primary); }
   .main-nav { display: none; }
   .hamburger { display: flex; }
   .mobile-nav { display: block; }
 
-  /* Hero */
-  .hero-title { font-size: clamp(1.875rem, 8vw, 2.5rem); }
-  .hero-content {
-    padding-top: calc(var(--header-height) + 1.75rem);
-    padding-bottom: 3.5rem;
+  /* Hero — header altından başlar, artık arkasına binmez */
+  .hero {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--header-height);
   }
+
+  /* Slider container da doğal yüksekliğe döner */
+  .hero-slider { min-height: 0; }
+
+  /* Slide'lar absolute'dan çıkıyor; show/hide ile geçiş */
+  .hero-slide {
+    display: none;
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+    transition: none;
+  }
+  .hero-slide.active {
+    display: flex;
+    min-height: 500px;
+  }
+
+  /* Mobilde text animasyonu iptal — position:static ile uyumsuz */
+  .hero-slide.active .hero-text { animation: none; }
+
+  .hero-title { font-size: clamp(1.875rem, 8vw, 2.5rem); }
+
+  .hero-content {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+  }
+
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .hero-actions .btn {
     width: 100%;
     max-width: 320px;
     justify-content: center;
+  }
+
+  /* Görsel ve oklar gizli */
+  .hero-layout { flex-direction: column; }
+  .hero-visual { display: none; }
+  .hero-arrow { display: none; }
+
+  /* Dots — absolute'dan çıkıp normal akışa giriyor */
+  .hero-dots {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    justify-content: center;
+    padding: 1.25rem 0 1.5rem;
   }
 
   /* Hizmetler */

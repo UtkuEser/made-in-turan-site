@@ -175,4 +175,75 @@
     });
   }
 
+
+  /* ----------------------------------------------------------
+     6. HERO SLIDER — otomatik geçiş + dot/ok kontrolü
+  ---------------------------------------------------------- */
+  const heroSlider = document.getElementById('hero-slider');
+
+  if (heroSlider) {
+    const slides  = heroSlider.querySelectorAll('.hero-slide');
+    const dots    = document.querySelectorAll('.hero-dot');
+    const prevBtn = document.getElementById('hero-prev');
+    const nextBtn = document.getElementById('hero-next');
+    const heroSection = document.getElementById('hero');
+
+    /* Slide veya dot yoksa sessizce çık */
+    if (!slides.length || dots.length !== slides.length) {
+      /* no-op */
+    } else {
+
+      let current   = 0;
+      let autoTimer = null;
+      const INTERVAL = 5500;
+
+      function goTo(index) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        dots[current].setAttribute('aria-selected', 'false');
+
+        current = (index + slides.length) % slides.length;
+
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+        dots[current].setAttribute('aria-selected', 'true');
+      }
+
+      function startAuto() {
+        autoTimer = setInterval(function () { goTo(current + 1); }, INTERVAL);
+      }
+
+      function stopAuto() { clearInterval(autoTimer); }
+
+      function resetAuto() { stopAuto(); startAuto(); }
+
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          goTo(parseInt(dot.getAttribute('data-slide'), 10));
+          resetAuto();
+        });
+      });
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () { goTo(current - 1); resetAuto(); });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () { goTo(current + 1); resetAuto(); });
+      }
+
+      /* Hover pause — #hero bölümü üzerinde (dots dahil) */
+      if (heroSection) {
+        heroSection.addEventListener('mouseenter', stopAuto);
+        heroSection.addEventListener('mouseleave', startAuto);
+      }
+
+      heroSlider.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft')  { goTo(current - 1); resetAuto(); }
+        if (e.key === 'ArrowRight') { goTo(current + 1); resetAuto(); }
+      });
+
+      startAuto();
+    }
+  }
+
 })();

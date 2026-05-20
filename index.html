@@ -56,35 +56,156 @@
 
   <main>
 
-    <!-- 1. HERO — slider yapısına hazır wrapper, şimdilik tek slide -->
+    <!-- 1. HERO — Duyuru slider (3 slide) -->
     <section class="hero" id="hero">
-      <div class="hero-video-wrap">
-        <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
-          <source src="assets/videos/madeinturan_ladingpage.mp4" type="video/mp4" />
-        </video>
-        <div class="hero-overlay"></div>
-      </div>
 
-      <div class="hero-slider">
-        <div class="hero-slide">
+      <div class="hero-slider" id="hero-slider" role="region" aria-label="Duyuru slaytları" aria-live="polite">
+
+        <!-- SLIDE 1 — Kurumsal tanıtım -->
+        <div class="hero-slide active" role="group" aria-label="Slayt 1 / 3">
           <div class="hero-content container">
-            <span class="hero-eyebrow reveal">Türk Dünyası Stratejik Ağı</span>
-            <h1 class="hero-title reveal">Dünyaya Açılan Güvenilir Köprünüz</h1>
-            <p class="hero-subtitle reveal">
-              Made in Turan, firmaların Türk dünyası ve bölgesel pazarlarda güvenilir bağlantılar
-              kurmasına, temsilcilik ve yatırım süreçlerini yönetmesine destek olur.
-            </p>
-            <div class="hero-actions reveal">
-              <a href="hizmetler.html" class="btn btn--primary">Hizmetleri İncele</a>
-              <a href="basvuru.html" class="btn btn--outline">Başvuru Yap</a>
+            <div class="hero-layout">
+              <div class="hero-text">
+                <span class="hero-eyebrow">Made in Turan</span>
+                <h1 class="hero-title">Dünyaya Açılan Güvenilir Köprünüz</h1>
+                <p class="hero-subtitle">Made in Turan, firmaların Türk dünyası ve bölgesel pazarlarda güvenilir bağlantılar kurmasına, temsilcilik ve yatırım süreçlerini yönetmesine destek olur.</p>
+                <div class="hero-actions">
+                  <a href="hizmetler.html" class="btn btn--primary">Hizmetleri İncele</a>
+                  <a href="basvuru.html" class="btn btn--outline">Başvuru Yap</a>
+                </div>
+              </div>
+              <div class="hero-visual" aria-hidden="true">
+                <svg class="hero-network-svg" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="140" cy="140" r="110" stroke="rgba(24,185,199,0.08)" stroke-width="1" stroke-dasharray="6 5"/>
+                  <circle cx="140" cy="140" r="62" stroke="rgba(24,185,199,0.10)" stroke-width="1"/>
+                  <line x1="140" y1="140" x2="140" y2="40" stroke="rgba(24,185,199,0.22)" stroke-width="1"/>
+                  <line x1="140" y1="140" x2="235" y2="109" stroke="rgba(24,185,199,0.22)" stroke-width="1"/>
+                  <line x1="140" y1="140" x2="199" y2="221" stroke="rgba(24,185,199,0.22)" stroke-width="1"/>
+                  <line x1="140" y1="140" x2="81" y2="221" stroke="rgba(24,185,199,0.22)" stroke-width="1"/>
+                  <line x1="140" y1="140" x2="45" y2="109" stroke="rgba(24,185,199,0.22)" stroke-width="1"/>
+                  <line x1="140" y1="40" x2="235" y2="109" stroke="rgba(24,185,199,0.09)" stroke-width="1" stroke-dasharray="4 4"/>
+                  <line x1="199" y1="221" x2="81" y2="221" stroke="rgba(24,185,199,0.09)" stroke-width="1" stroke-dasharray="4 4"/>
+                  <circle cx="140" cy="40" r="9" fill="rgba(6,40,64,0.92)" stroke="rgba(24,185,199,0.42)" stroke-width="1.5"/>
+                  <circle cx="235" cy="109" r="9" fill="rgba(6,40,64,0.92)" stroke="rgba(24,185,199,0.42)" stroke-width="1.5"/>
+                  <circle cx="199" cy="221" r="9" fill="rgba(6,40,64,0.92)" stroke="rgba(24,185,199,0.42)" stroke-width="1.5"/>
+                  <circle cx="81" cy="221" r="9" fill="rgba(6,40,64,0.92)" stroke="rgba(24,185,199,0.42)" stroke-width="1.5"/>
+                  <circle cx="45" cy="109" r="9" fill="rgba(6,40,64,0.92)" stroke="rgba(24,185,199,0.42)" stroke-width="1.5"/>
+                  <circle cx="140" cy="140" r="20" fill="rgba(6,40,64,0.95)" stroke="rgba(24,185,199,0.55)" stroke-width="1.5"/>
+                  <circle cx="140" cy="140" r="6" fill="rgba(24,185,199,0.95)"/>
+                  <circle cx="140" cy="140" r="28" stroke="rgba(24,185,199,0.22)" stroke-width="1" class="hero-pulse-ring"/>
+                  <text x="140" y="22" text-anchor="middle" fill="rgba(24,185,199,0.88)" font-size="9.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.08em">TR</text>
+                  <text x="255" y="113" text-anchor="start" fill="rgba(24,185,199,0.88)" font-size="9.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.08em">KZ</text>
+                  <text x="199" y="242" text-anchor="middle" fill="rgba(24,185,199,0.88)" font-size="9.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.08em">UZ</text>
+                  <text x="81" y="242" text-anchor="middle" fill="rgba(24,185,199,0.88)" font-size="9.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.08em">AE</text>
+                  <text x="25" y="113" text-anchor="end" fill="rgba(24,185,199,0.88)" font-size="9.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.08em">AZ</text>
+                  <text x="140" y="164" text-anchor="middle" fill="rgba(24,185,199,0.50)" font-size="7.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.14em">TURAN</text>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- SLIDE 2 — Etkinlik -->
+        <div class="hero-slide" role="group" aria-label="Slayt 2 / 3">
+          <div class="hero-content container">
+            <div class="hero-layout">
+              <div class="hero-text">
+                <span class="hero-eyebrow">Etkinlik</span>
+                <h1 class="hero-title">Türk Dünyası Finans Liderleri Zirvesi</h1>
+                <p class="hero-subtitle">Bölgenin finans ve yatırım liderlerini bir araya getiren üst düzey forum ve iş geliştirme süreci.</p>
+                <div class="hero-actions">
+                  <a href="etkinlikler.html" class="btn btn--primary">Etkinlikleri İncele</a>
+                  <a href="basvuru.html" class="btn btn--outline">Başvuru Yap</a>
+                </div>
+              </div>
+              <div class="hero-visual" aria-hidden="true">
+                <svg class="hero-network-svg" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="140" cy="140" r="110" stroke="rgba(24,185,199,0.08)" stroke-width="1" stroke-dasharray="6 5"/>
+                  <circle cx="140" cy="140" r="62" stroke="rgba(24,185,199,0.10)" stroke-width="1"/>
+                  <line x1="140" y1="140" x2="140" y2="40" stroke="rgba(24,185,199,0.22)" stroke-width="1"/>
+                  <line x1="140" y1="140" x2="235" y2="109" stroke="rgba(24,185,199,0.22)" stroke-width="1"/>
+                  <line x1="140" y1="140" x2="199" y2="221" stroke="rgba(24,185,199,0.22)" stroke-width="1"/>
+                  <line x1="140" y1="140" x2="81" y2="221" stroke="rgba(24,185,199,0.22)" stroke-width="1"/>
+                  <line x1="140" y1="140" x2="45" y2="109" stroke="rgba(24,185,199,0.22)" stroke-width="1"/>
+                  <line x1="140" y1="40" x2="235" y2="109" stroke="rgba(24,185,199,0.09)" stroke-width="1" stroke-dasharray="4 4"/>
+                  <line x1="199" y1="221" x2="81" y2="221" stroke="rgba(24,185,199,0.09)" stroke-width="1" stroke-dasharray="4 4"/>
+                  <circle cx="140" cy="40" r="9" fill="rgba(6,40,64,0.92)" stroke="rgba(24,185,199,0.42)" stroke-width="1.5"/>
+                  <circle cx="235" cy="109" r="9" fill="rgba(6,40,64,0.92)" stroke="rgba(24,185,199,0.42)" stroke-width="1.5"/>
+                  <circle cx="199" cy="221" r="9" fill="rgba(6,40,64,0.92)" stroke="rgba(24,185,199,0.42)" stroke-width="1.5"/>
+                  <circle cx="81" cy="221" r="9" fill="rgba(6,40,64,0.92)" stroke="rgba(24,185,199,0.42)" stroke-width="1.5"/>
+                  <circle cx="45" cy="109" r="9" fill="rgba(6,40,64,0.92)" stroke="rgba(24,185,199,0.42)" stroke-width="1.5"/>
+                  <circle cx="140" cy="140" r="20" fill="rgba(6,40,64,0.95)" stroke="rgba(24,185,199,0.55)" stroke-width="1.5"/>
+                  <circle cx="140" cy="140" r="6" fill="rgba(24,185,199,0.95)"/>
+                  <circle cx="140" cy="140" r="28" stroke="rgba(24,185,199,0.22)" stroke-width="1" class="hero-pulse-ring"/>
+                  <text x="140" y="22" text-anchor="middle" fill="rgba(24,185,199,0.88)" font-size="9.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.08em">TR</text>
+                  <text x="255" y="113" text-anchor="start" fill="rgba(24,185,199,0.88)" font-size="9.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.08em">KZ</text>
+                  <text x="199" y="242" text-anchor="middle" fill="rgba(24,185,199,0.88)" font-size="9.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.08em">UZ</text>
+                  <text x="81" y="242" text-anchor="middle" fill="rgba(24,185,199,0.88)" font-size="9.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.08em">AE</text>
+                  <text x="25" y="113" text-anchor="end" fill="rgba(24,185,199,0.88)" font-size="9.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.08em">AZ</text>
+                  <text x="140" y="164" text-anchor="middle" fill="rgba(24,185,199,0.50)" font-size="7.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.14em">TURAN</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 3 — Faaliyet bölgeleri -->
+        <div class="hero-slide" role="group" aria-label="Slayt 3 / 3">
+          <div class="hero-content container">
+            <div class="hero-layout">
+              <div class="hero-text">
+                <span class="hero-eyebrow">Faaliyet Bölgeleri</span>
+                <h1 class="hero-title">8 Ülkede Stratejik Varlık</h1>
+                <p class="hero-subtitle">Türkiye'den Orta Asya'ya uzanan bölgede saha teması, yerel partner ağı ve kurumsal ilişki yönetimiyle çalışıyoruz.</p>
+                <div class="hero-actions">
+                  <a href="faaliyet-bolgeleri.html" class="btn btn--primary">Bölgeleri İncele</a>
+                  <a href="basvuru.html" class="btn btn--outline">İletişime Geç</a>
+                </div>
+              </div>
+              <div class="hero-visual" aria-hidden="true">
+                <svg class="hero-network-svg" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="140" cy="140" r="110" stroke="rgba(24,185,199,0.08)" stroke-width="1" stroke-dasharray="6 5"/>
+                  <circle cx="140" cy="140" r="62" stroke="rgba(24,185,199,0.10)" stroke-width="1"/>
+                  <line x1="140" y1="140" x2="140" y2="40" stroke="rgba(24,185,199,0.22)" stroke-width="1"/>
+                  <line x1="140" y1="140" x2="235" y2="109" stroke="rgba(24,185,199,0.22)" stroke-width="1"/>
+                  <line x1="140" y1="140" x2="199" y2="221" stroke="rgba(24,185,199,0.22)" stroke-width="1"/>
+                  <line x1="140" y1="140" x2="81" y2="221" stroke="rgba(24,185,199,0.22)" stroke-width="1"/>
+                  <line x1="140" y1="140" x2="45" y2="109" stroke="rgba(24,185,199,0.22)" stroke-width="1"/>
+                  <line x1="140" y1="40" x2="235" y2="109" stroke="rgba(24,185,199,0.09)" stroke-width="1" stroke-dasharray="4 4"/>
+                  <line x1="199" y1="221" x2="81" y2="221" stroke="rgba(24,185,199,0.09)" stroke-width="1" stroke-dasharray="4 4"/>
+                  <circle cx="140" cy="40" r="9" fill="rgba(6,40,64,0.92)" stroke="rgba(24,185,199,0.42)" stroke-width="1.5"/>
+                  <circle cx="235" cy="109" r="9" fill="rgba(6,40,64,0.92)" stroke="rgba(24,185,199,0.42)" stroke-width="1.5"/>
+                  <circle cx="199" cy="221" r="9" fill="rgba(6,40,64,0.92)" stroke="rgba(24,185,199,0.42)" stroke-width="1.5"/>
+                  <circle cx="81" cy="221" r="9" fill="rgba(6,40,64,0.92)" stroke="rgba(24,185,199,0.42)" stroke-width="1.5"/>
+                  <circle cx="45" cy="109" r="9" fill="rgba(6,40,64,0.92)" stroke="rgba(24,185,199,0.42)" stroke-width="1.5"/>
+                  <circle cx="140" cy="140" r="20" fill="rgba(6,40,64,0.95)" stroke="rgba(24,185,199,0.55)" stroke-width="1.5"/>
+                  <circle cx="140" cy="140" r="6" fill="rgba(24,185,199,0.95)"/>
+                  <circle cx="140" cy="140" r="28" stroke="rgba(24,185,199,0.22)" stroke-width="1" class="hero-pulse-ring"/>
+                  <text x="140" y="22" text-anchor="middle" fill="rgba(24,185,199,0.88)" font-size="9.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.08em">TR</text>
+                  <text x="255" y="113" text-anchor="start" fill="rgba(24,185,199,0.88)" font-size="9.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.08em">KZ</text>
+                  <text x="199" y="242" text-anchor="middle" fill="rgba(24,185,199,0.88)" font-size="9.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.08em">UZ</text>
+                  <text x="81" y="242" text-anchor="middle" fill="rgba(24,185,199,0.88)" font-size="9.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.08em">AE</text>
+                  <text x="25" y="113" text-anchor="end" fill="rgba(24,185,199,0.88)" font-size="9.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.08em">AZ</text>
+                  <text x="140" y="164" text-anchor="middle" fill="rgba(24,185,199,0.50)" font-size="7.5" font-family="Plus Jakarta Sans,sans-serif" font-weight="700" letter-spacing="0.14em">TURAN</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.hero-slider -->
+
+      <!-- Dots -->
+      <div class="hero-dots" role="tablist" aria-label="Slayt kontrolü">
+        <button class="hero-dot active" role="tab" aria-selected="true" aria-label="Slayt 1" data-slide="0"></button>
+        <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slayt 2" data-slide="1"></button>
+        <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slayt 3" data-slide="2"></button>
       </div>
 
-      <div class="hero-scroll-hint" aria-hidden="true">
-        <span class="scroll-line"></span>
-      </div>
+      <!-- Oklar -->
+      <button class="hero-arrow hero-arrow--prev" aria-label="Önceki slayt" id="hero-prev">&#8592;</button>
+      <button class="hero-arrow hero-arrow--next" aria-label="Sonraki slayt" id="hero-next">&#8594;</button>
+
     </section>
 
     <!-- 2+3. STRATEJİK BÜYÜME KÖPRÜSÜ + RAKAMLAR -->

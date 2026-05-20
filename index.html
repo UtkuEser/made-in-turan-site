@@ -56,7 +56,7 @@
 
   <main>
 
-    <!-- 1. HERO -->
+    <!-- 1. HERO — slider yapısına hazır wrapper, şimdilik tek slide -->
     <section class="hero" id="hero">
       <div class="hero-video-wrap">
         <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
@@ -65,21 +65,20 @@
         <div class="hero-overlay"></div>
       </div>
 
-      <div class="hero-content container">
-        <span class="hero-eyebrow reveal">Türk Dünyası Stratejik Ağı</span>
-        <h1 class="hero-title reveal">
-          Türk Dünyasında<br />
-          Ticaret, Yatırım ve<br />
-          Stratejik Büyüme Ağı
-        </h1>
-        <p class="hero-subtitle reveal">
-          Made in Turan; markaların yeni pazarlara açılması, doğru partnerlerle buluşması
-          ve bölgesel ölçekte sürdürülebilir büyüme kurması için çalışan uluslararası bir yapıdır.
-        </p>
-        <div class="hero-actions reveal">
-          <a href="basvuru.html" class="btn btn--primary">İş Birliği Başvurusu</a>
-          <a href="faaliyet-bolgeleri.html" class="btn btn--outline">Faaliyet Bölgeleri</a>
-          <a href="referanslar.html" class="btn btn--ghost">Referansları İncele</a>
+      <div class="hero-slider">
+        <div class="hero-slide">
+          <div class="hero-content container">
+            <span class="hero-eyebrow reveal">Türk Dünyası Stratejik Ağı</span>
+            <h1 class="hero-title reveal">Dünyaya Açılan Güvenilir Köprünüz</h1>
+            <p class="hero-subtitle reveal">
+              Made in Turan, firmaların Türk dünyası ve bölgesel pazarlarda güvenilir bağlantılar
+              kurmasına, temsilcilik ve yatırım süreçlerini yönetmesine destek olur.
+            </p>
+            <div class="hero-actions reveal">
+              <a href="hizmetler.html" class="btn btn--primary">Hizmetleri İncele</a>
+              <a href="basvuru.html" class="btn btn--outline">Başvuru Yap</a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -88,23 +87,23 @@
       </div>
     </section>
 
-    <!-- 2. HAKKIMIZDA (Kompakt) -->
+    <!-- 2+3. STRATEJİK BÜYÜME KÖPRÜSÜ + RAKAMLAR -->
     <section class="section hakkimizda" id="hakkimizda">
       <div class="container">
-        <div class="about-grid">
-          <div class="about-content">
-            <span class="section-label reveal">Hakkımızda</span>
-            <h2 class="section-title reveal">Türk Dünyasının Stratejik Büyüme Köprüsü</h2>
-            <p class="about-summary reveal">
+        <div class="kopru-grid">
+          <div class="kopru-text reveal">
+            <span class="section-label">Hakkımızda</span>
+            <h2 class="section-title">Türk Dünyasının Stratejik Büyüme Köprüsü</h2>
+            <p class="about-summary">
               Made in Turan; Türkiye'den başlayarak Orta Asya, Güney Kafkasya ve Körfez'e uzanan
               coğrafyada ticaret, yatırım ve pazar açılımı süreçlerini yöneten bölgesel bir yapıdır.
               Bir danışmanlık ajansı değil; saha temasları, yerleşik ağlar ve kurumsal ilişkiler
               üzerine kurulu bir büyüme platformudur.
             </p>
-            <a href="hakkimizda.html" class="section-more reveal">Hakkımızda Devamı</a>
+            <a href="hakkimizda.html" class="section-more">Hakkımızda Devamı</a>
           </div>
 
-          <aside class="about-stats">
+          <div class="kopru-stats">
             <div class="stat-card reveal">
               <span class="stat-number">8</span>
               <span class="stat-label">Faaliyet Ülkesi</span>
@@ -121,82 +120,50 @@
               <span class="stat-number">140</span>
               <span class="stat-label">Market Zinciri Girişi</span>
             </div>
-          </aside>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. HİZMETLER -->
+    <!-- 4. HİZMETLER — 6 kart, benzer hizmetler birleştirildi -->
     <section class="section hizmetler" id="hizmetler">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-label">Hizmetler</span>
           <h2 class="section-title">Büyüme Sürecinizin Her Adımında</h2>
-          <p class="section-desc">Yeni pazara girişten operasyonel kuruluşa, partner ağından yatırımcı eşleşmesine kadar bütünleşik bir destek altyapısı.</p>
+          <p class="section-desc">Yeni pazara girişten operasyonel kuruluşa, partner ağından yatırımcı eşleşmesine kadar bütünleşik destek altyapısı.</p>
         </div>
 
-        <div class="services-grid">
+        <div class="services-grid services-grid--home">
           <article class="service-card reveal">
             <div class="service-card-inner">
               <span class="service-number">01</span>
-              <h3 class="service-title">Ürün / Hizmet Değerlendirmesi</h3>
-              <p class="service-desc">Markanızın uluslararası pazarlara uygunluğunu, rekabet konumunu ve erişilebilir segmentleri analiz ediyoruz.</p>
+              <h3 class="service-title">Pazar Analizi ve Ülke Seçimi</h3>
+              <p class="service-desc">Marka uygunluk değerlendirmesi, talep analizi ve çoklu ülke ağımız üzerinden doğru pazar seçimi.</p>
             </div>
           </article>
 
           <article class="service-card reveal">
             <div class="service-card-inner">
               <span class="service-number">02</span>
-              <h3 class="service-title">Pazar Araştırması</h3>
-              <p class="service-desc">Hedef coğrafyada talep yapısını, yasal çerçeveyi, rekabeti ve girişi etkileyen dinamikleri sahadan raporluyoruz.</p>
+              <h3 class="service-title">Stratejik Yol Haritası</h3>
+              <p class="service-desc">Pazar girişinden operasyonel olgunlaşmaya uzanan adımlar; zaman çerçevesi ve kaynak planlamasıyla yapılandırılır.</p>
             </div>
           </article>
 
           <article class="service-card reveal">
             <div class="service-card-inner">
               <span class="service-number">03</span>
-              <h3 class="service-title">Ülke Seçimi</h3>
-              <p class="service-desc">Çoklu ülke ağımız üzerinden markanıza en uygun giriş pazarını ve sıralamayı belirliyoruz.</p>
+              <h3 class="service-title">Temsilcilik ve Partner Ağı</h3>
+              <p class="service-desc">Hedef ülkede şirket kuruluşu, resmi temsilcilik ve güvenilir distribütör ile franchise partner bağlantıları.</p>
             </div>
           </article>
 
           <article class="service-card reveal">
             <div class="service-card-inner">
               <span class="service-number">04</span>
-              <h3 class="service-title">Stratejik Yol Haritası</h3>
-              <p class="service-desc">Pazar girişinden operasyonel olgunlaşmaya uzanan adımları, zaman çerçevesi ve kaynak planlamasıyla yapılandırıyoruz.</p>
-            </div>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-card-inner">
-              <span class="service-number">05</span>
-              <h3 class="service-title">Şirket Kurulumu / Temsilcilik</h3>
-              <p class="service-desc">Hedef ülkede yasal yapılanma, şirket kuruluşu ve resmi temsilcilik süreçlerini yerinde yönetiyoruz.</p>
-            </div>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-card-inner">
-              <span class="service-number">06</span>
-              <h3 class="service-title">Yerel Partner / Distribütör</h3>
-              <p class="service-desc">Bölgesel ağımız aracılığıyla güvenilir distribütör, franchise ortağı ve ticari partner bağlantıları kuruyoruz.</p>
-            </div>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-card-inner">
-              <span class="service-number">07</span>
-              <h3 class="service-title">Pazarlama / Lansman / Satış</h3>
-              <p class="service-desc">Yerel pazara özgü konumlandırma, lansman stratejisi ve satış kanalı geliştirme desteği sağlıyoruz.</p>
-            </div>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-card-inner">
-              <span class="service-number">08</span>
-              <h3 class="service-title">Operasyon ve Yatırımcı Eşleşmesi</h3>
-              <p class="service-desc">Kurulu operasyonların yönetimi ve büyüme sürecini finanse edecek yatırımcı bağlantıları için köprü oluyoruz.</p>
+              <h3 class="service-title">Pazarlama, Lansman ve Yatırımcı Desteği</h3>
+              <p class="service-desc">Yerel konumlandırma, satış kanalı geliştirme ve büyüme finansmanı için yatırımcı bağlantısı.</p>
             </div>
           </article>
         </div>
@@ -207,7 +174,7 @@
       </div>
     </section>
 
-    <!-- 4. FAALİYET BÖLGELERİ -->
+    <!-- 5. FAALİYET BÖLGELERİ — yatay şerit, mobilde kaydırılabilir -->
     <section class="section bolgeler" id="bolgeler">
       <div class="container">
         <div class="section-header reveal">
@@ -216,78 +183,49 @@
           <p class="section-desc">Türk dünyasının ekonomik omurgasını oluşturan coğrafyada yerleşik ağlar, kurumsal ilişkiler ve saha temasıyla çalışıyoruz.</p>
         </div>
 
-        <div class="regions-grid">
-          <article class="region-card reveal">
-            <div class="region-card-inner">
-              <span class="region-tag">TR</span>
-              <h3 class="region-name">Türkiye</h3>
-              <p class="region-role">Üretim ve marka çıkış gücü</p>
-              <p class="region-desc">Bölgeye açılan markaların ana çıkış noktası; üretim kapasitesi, marka birikimi ve kurumsal yapılanma merkezi.</p>
-            </div>
-          </article>
-
-          <article class="region-card reveal">
-            <div class="region-card-inner">
-              <span class="region-tag">AZ</span>
-              <h3 class="region-name">Azerbaycan</h3>
-              <p class="region-role">Yatırım ve bağlantı merkezi</p>
-              <p class="region-desc">Orta Asya'ya açılan kapı; Karabağ ve Nahçıvan yatırım bölgeleri dahil güçlü kurumsal ağ.</p>
-            </div>
-          </article>
-
-          <article class="region-card reveal">
-            <div class="region-card-inner">
-              <span class="region-tag">KZ</span>
-              <h3 class="region-name">Kazakistan</h3>
-              <p class="region-role">Stratejik kuruluş ve bölgesel merkez</p>
-              <p class="region-desc">Orta Asya'nın en büyük ekonomisi; şirket kuruluşu, bölgesel dağıtım ve lojistik merkezi olarak öne çıkıyor.</p>
-            </div>
-          </article>
-
-          <article class="region-card reveal">
-            <div class="region-card-inner">
-              <span class="region-tag">UZ</span>
-              <h3 class="region-name">Özbekistan</h3>
-              <p class="region-role">Büyüme ve ticari açılım potansiyeli</p>
-              <p class="region-desc">Hızla büyüyen iç pazar; tüketim artışı ve yabancı yatırıma açık dinamik ekonomik ortam.</p>
-            </div>
-          </article>
-
-          <article class="region-card reveal">
-            <div class="region-card-inner">
-              <span class="region-tag">KG</span>
-              <h3 class="region-name">Kırgızistan</h3>
-              <p class="region-role">Bölgesel ağ genişleme alanı</p>
-              <p class="region-desc">Serbest ticaret bölgeleri ve bölgesel ağ bağlantısı açısından stratejik geçiş noktası.</p>
-            </div>
-          </article>
-
-          <article class="region-card reveal">
-            <div class="region-card-inner">
-              <span class="region-tag">TM</span>
-              <h3 class="region-name">Türkmenistan</h3>
-              <p class="region-role">Stratejik ticaret bağlantısı</p>
-              <p class="region-desc">Enerji ve hammadde zenginliğiyle desteklenen seçici ticaret ortaklığı ve bölgesel bağlantı noktası.</p>
-            </div>
-          </article>
-
-          <article class="region-card reveal">
-            <div class="region-card-inner">
-              <span class="region-tag">RU</span>
-              <h3 class="region-name">Rusya</h3>
-              <p class="region-role">Pazar genişleme ve dağıtım alanı</p>
-              <p class="region-desc">60+ Rusya merkezli firma bağlantısı; büyük pazar ölçeği ve kurulu dağıtım ağlarına doğrudan erişim.</p>
-            </div>
-          </article>
-
-          <article class="region-card reveal">
-            <div class="region-card-inner">
-              <span class="region-tag">AE</span>
-              <h3 class="region-name">Dubai</h3>
-              <p class="region-role">Küresel bağlantı ve uluslararası görünürlük</p>
-              <p class="region-desc">Bölgesel firmaların küresel pazara çıkış noktası; uluslararası yatırımcı ve iş ortağı bağlantı merkezi.</p>
-            </div>
-          </article>
+        <div class="regions-strip-wrap">
+          <div class="regions-strip">
+            <a href="faaliyet-bolgeleri.html" class="region-chip reveal">
+              <span class="region-chip-tag">TR</span>
+              <span class="region-chip-name">Türkiye</span>
+              <span class="region-chip-role">Üretim ve marka çıkış gücü</span>
+            </a>
+            <a href="faaliyet-bolgeleri.html" class="region-chip reveal">
+              <span class="region-chip-tag">AZ</span>
+              <span class="region-chip-name">Azerbaycan</span>
+              <span class="region-chip-role">Yatırım ve bağlantı merkezi</span>
+            </a>
+            <a href="faaliyet-bolgeleri.html" class="region-chip reveal">
+              <span class="region-chip-tag">KZ</span>
+              <span class="region-chip-name">Kazakistan</span>
+              <span class="region-chip-role">Stratejik kuruluş merkezi</span>
+            </a>
+            <a href="faaliyet-bolgeleri.html" class="region-chip reveal">
+              <span class="region-chip-tag">UZ</span>
+              <span class="region-chip-name">Özbekistan</span>
+              <span class="region-chip-role">Büyüme ve ticari açılım</span>
+            </a>
+            <a href="faaliyet-bolgeleri.html" class="region-chip reveal">
+              <span class="region-chip-tag">KG</span>
+              <span class="region-chip-name">Kırgızistan</span>
+              <span class="region-chip-role">Bölgesel ağ genişleme</span>
+            </a>
+            <a href="faaliyet-bolgeleri.html" class="region-chip reveal">
+              <span class="region-chip-tag">TM</span>
+              <span class="region-chip-name">Türkmenistan</span>
+              <span class="region-chip-role">Stratejik ticaret bağlantısı</span>
+            </a>
+            <a href="faaliyet-bolgeleri.html" class="region-chip reveal">
+              <span class="region-chip-tag">RU</span>
+              <span class="region-chip-name">Rusya</span>
+              <span class="region-chip-role">Pazar genişleme alanı</span>
+            </a>
+            <a href="faaliyet-bolgeleri.html" class="region-chip reveal">
+              <span class="region-chip-tag">AE</span>
+              <span class="region-chip-name">Dubai</span>
+              <span class="region-chip-role">Küresel bağlantı merkezi</span>
+            </a>
+          </div>
         </div>
 
         <div style="margin-top: var(--space-xl);">
@@ -296,7 +234,7 @@
       </div>
     </section>
 
-    <!-- 5. SON 3 ETKİNLİK -->
+    <!-- 6. SON 3 ETKİNLİK — görsel alanı ile -->
     <section class="section etkinlikler" id="etkinlikler">
       <div class="container">
         <div class="section-header reveal">
@@ -307,26 +245,32 @@
 
         <div class="events-grid">
           <article class="event-card event-card--featured reveal">
+            <div class="event-card-image event-img--zirve" aria-hidden="true"></div>
             <div class="event-card-inner">
               <span class="event-tag">Zirve</span>
               <h3 class="event-title">Türk Dünyası Finans Liderler Zirvesi</h3>
               <p class="event-desc">Bölgenin finans ve yatırım liderlerini bir araya getiren üst düzey forum. 500'ü aşkın firma temsilcisi ve 8 ülkeden katılım.</p>
+              <a href="etkinlikler.html" class="event-detail-link">Detaylar</a>
             </div>
           </article>
 
           <article class="event-card reveal">
+            <div class="event-card-image event-img--sefer" aria-hidden="true"></div>
             <div class="event-card-inner">
               <span class="event-tag">Resmi Sefer</span>
               <h3 class="event-title">Azerbaycan İş Adamları Resmi Seferi</h3>
               <p class="event-desc">Azerbaycan'da yatırım ve ticaret bağlantısı kurmak isteyen firmalara yönelik organize iş seferi.</p>
+              <a href="etkinlikler.html" class="event-detail-link">Detaylar</a>
             </div>
           </article>
 
           <article class="event-card reveal">
+            <div class="event-card-image event-img--forum" aria-hidden="true"></div>
             <div class="event-card-inner">
-              <span class="event-tag">Resmi Sefer</span>
-              <h3 class="event-title">Karabağ ve Nahçıvan Resmi Seferi</h3>
-              <p class="event-desc">Karabağ yeniden yapılanma bölgesine ve Nahçıvan'a yönelik resmi iş geliştirme seferi.</p>
+              <span class="event-tag">Forum</span>
+              <h3 class="event-title">Türk Devletleri Ekonomik Forumu</h3>
+              <p class="event-desc">Türk Devletleri Teşkilatı çatısı altında ekonomik iş birliği ve stratejik büyüme forum süreçleri.</p>
+              <a href="etkinlikler.html" class="event-detail-link">Detaylar</a>
             </div>
           </article>
         </div>
@@ -337,54 +281,62 @@
       </div>
     </section>
 
-    <!-- 6. TEMSİLCİLİKLER -->
+    <!-- 7. TEMSİLCİLİKLER — yatay kaydırılabilir kart şeridi -->
     <section class="section temsilcilikler" id="temsilcilikler">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-label">Temsilcilikler</span>
           <h2 class="section-title">Türkiye Temsilcilikleri</h2>
+          <p class="section-desc">Bölgesel temsilcilerimiz yerel firmaları uluslararası büyüme süreçlerine bağlıyor.</p>
         </div>
 
-        <div class="rep-grid">
-          <article class="rep-card reveal">
-            <div class="rep-card-inner">
-              <div class="rep-avatar" aria-hidden="true">SE</div>
-              <h3 class="rep-name">Suat Ebçin</h3>
-              <p class="rep-title">Ankara Temsilcisi</p>
-            </div>
-          </article>
+        <div class="reps-strip-wrap">
+          <div class="reps-strip">
+            <article class="rep-strip-card reveal">
+              <div class="rep-strip-avatar" aria-hidden="true">SE</div>
+              <div class="rep-strip-info">
+                <strong class="rep-strip-name">Suat Ebçin</strong>
+                <span class="rep-strip-title">Ankara Temsilcisi</span>
+                <a href="mailto:suatebcin@madeinturan.com" class="rep-strip-email">suatebcin@madeinturan.com</a>
+              </div>
+            </article>
 
-          <article class="rep-card reveal">
-            <div class="rep-card-inner">
-              <div class="rep-avatar" aria-hidden="true">GÖ</div>
-              <h3 class="rep-name">Gökhan Öztürk</h3>
-              <p class="rep-title">İzmir Temsilcisi</p>
-            </div>
-          </article>
+            <article class="rep-strip-card reveal">
+              <div class="rep-strip-avatar" aria-hidden="true">GÖ</div>
+              <div class="rep-strip-info">
+                <strong class="rep-strip-name">Gökhan Öztürk</strong>
+                <span class="rep-strip-title">Başkan Yardımcısı / İzmir İl Temsilcisi</span>
+                <a href="mailto:gokhanozturk@madeinturan.com" class="rep-strip-email">gokhanozturk@madeinturan.com</a>
+              </div>
+            </article>
 
-          <article class="rep-card reveal">
-            <div class="rep-card-inner">
-              <div class="rep-avatar" aria-hidden="true">BA</div>
-              <h3 class="rep-name">Berkan Akıllı</h3>
-            </div>
-          </article>
+            <article class="rep-strip-card reveal">
+              <div class="rep-strip-avatar" aria-hidden="true">BA</div>
+              <div class="rep-strip-info">
+                <strong class="rep-strip-name">Berkan Akıllı</strong>
+                <span class="rep-strip-title">Başkan Yardımcısı / Ankara İl Temsilcisi</span>
+                <a href="mailto:berkanakilli@madeinturan.com" class="rep-strip-email">berkanakilli@madeinturan.com</a>
+              </div>
+            </article>
 
-          <article class="rep-card reveal">
-            <div class="rep-card-inner">
-              <div class="rep-avatar" aria-hidden="true">SD</div>
-              <h3 class="rep-name">Serdar Dilmen</h3>
-              <p class="rep-title">İstanbul Temsilcisi</p>
-            </div>
-          </article>
+            <article class="rep-strip-card reveal">
+              <div class="rep-strip-avatar" aria-hidden="true">SD</div>
+              <div class="rep-strip-info">
+                <strong class="rep-strip-name">Serdar Dilmen</strong>
+                <span class="rep-strip-title">İstanbul Temsilcisi</span>
+                <a href="mailto:serdardilmen@madeinturan.com" class="rep-strip-email">serdardilmen@madeinturan.com</a>
+              </div>
+            </article>
+          </div>
         </div>
 
-        <div style="margin-top: var(--space-xl);">
+        <div style="margin-top: var(--space-md);">
           <a href="temsilcilikler.html" class="section-more reveal">Tüm Temsilcilikler</a>
         </div>
       </div>
     </section>
 
-    <!-- 7. BAŞVURU -->
+    <!-- 8. BAŞVURU / İLETİŞİM FORMU -->
     <section class="section basvuru" id="basvuru">
       <div class="container">
         <div class="apply-grid">
@@ -392,6 +344,11 @@
             <span class="section-label">Başvuru</span>
             <h2 class="section-title">Markanızı Yeni Pazarlara Taşımak İçin İlk Adımı Atın</h2>
             <p class="apply-desc">Bölgesel büyüme, temsilcilik, partner bulma ve stratejik açılım süreçleriniz için bizimle iletişime geçin.</p>
+            <p style="margin-top: var(--space-md); font-size: 0.85rem; color: var(--color-text-faint);">
+              Daha ayrıntılı başvuru için
+              <a href="basvuru.html" style="color: var(--color-accent); font-weight: 600;">başvuru sayfasını</a>
+              kullanabilirsiniz.
+            </p>
           </div>
 
           <div class="apply-form-wrap reveal">
@@ -419,7 +376,7 @@
                   <input type="text" id="sektor" name="sektor" class="form-input" placeholder="Faaliyet sektörünüz" />
                 </div>
                 <div class="form-group">
-                  <label for="hedef-pazar" class="form-label">Hedef Pazar / İlgi Alanı</label>
+                  <label for="hedef-pazar" class="form-label">Hedef Pazar</label>
                   <input type="text" id="hedef-pazar" name="hedef_pazar" class="form-input" placeholder="Kazakistan, Dubai, vb." />
                 </div>
               </div>

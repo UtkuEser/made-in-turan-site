@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Made in Turan etkinlik detayı." />
+  <meta property="og:type" content="website" />
+  <title>Etkinlik — Made in Turan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner container">
+      <a href="index.html" class="header-logo" aria-label="Made in Turan Ana Sayfa">
+        <img src="assets/images/madeinturan_logo.png" alt="Made in Turan" class="logo-img" />
+      </a>
+
+      <nav class="main-nav" aria-label="Ana navigasyon">
+        <ul class="nav-list">
+          <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+          <li><a href="hizmetler.html" class="nav-link">Hizmetler</a></li>
+          <li><a href="faaliyet-bolgeleri.html" class="nav-link">Bölgeler</a></li>
+          <li><a href="referanslar.html" class="nav-link">Referanslar</a></li>
+          <li><a href="etkinlikler.html" class="nav-link">Etkinlikler</a></li>
+          <li><a href="temsilcilikler.html" class="nav-link">Temsilcilikler</a></li>
+          <li><a href="basvuru.html" class="nav-link nav-link--cta">Başvuru</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <ul class="mobile-nav-list">
+        <li><a href="hakkimizda.html" class="mobile-nav-link">Hakkımızda</a></li>
+        <li><a href="hizmetler.html" class="mobile-nav-link">Hizmetler</a></li>
+        <li><a href="faaliyet-bolgeleri.html" class="mobile-nav-link">Bölgeler</a></li>
+        <li><a href="referanslar.html" class="mobile-nav-link">Referanslar</a></li>
+        <li><a href="etkinlikler.html" class="mobile-nav-link">Etkinlikler</a></li>
+        <li><a href="temsilcilikler.html" class="mobile-nav-link">Temsilcilikler</a></li>
+        <li><a href="basvuru.html" class="mobile-nav-link mobile-nav-link--cta">Başvuru</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="ed-main">
+    <div id="ed-root"></div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link" aria-label="Made in Turan Ana Sayfa">
+            <img src="assets/images/madeinturan_logo.png" alt="Made in Turan" class="footer-logo-img" />
+          </a>
+          <p class="footer-tagline">Türk dünyasında ticaret, yatırım ve stratejik büyüme için bölgesel ağ.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigasyon">
+          <h4 class="footer-nav-title">Sayfalar</h4>
+          <ul class="footer-nav-list">
+            <li><a href="hakkimizda.html" class="footer-nav-link">Hakkımızda</a></li>
+            <li><a href="hizmetler.html" class="footer-nav-link">Hizmetler</a></li>
+            <li><a href="faaliyet-bolgeleri.html" class="footer-nav-link">Faaliyet Bölgeleri</a></li>
+            <li><a href="referanslar.html" class="footer-nav-link">Referanslar</a></li>
+            <li><a href="etkinlikler.html" class="footer-nav-link">Etkinlikler</a></li>
+            <li><a href="temsilcilikler.html" class="footer-nav-link">Temsilcilikler</a></li>
+            <li><a href="basvuru.html" class="footer-nav-link">Başvuru</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact">
+          <h4 class="footer-nav-title">İletişim</h4>
+          <address class="footer-address">
+            <p>Made in Turan</p>
+            <p>Türkiye &amp; Bölgesel Ofisler</p>
+            <a href="mailto:info@madeinturan.com" class="footer-contact-link">info@madeinturan.com</a>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2025 Made in Turan. Tüm hakları saklıdır.</p>
+        <div class="eek-signature" aria-label="Designed by EEK">by <span>EEK</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/events-data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    function escHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    function escAttr(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;');
+    }
+
+    var root = document.getElementById('ed-root');
+    if (!root || typeof window.MIT_EVENTS === 'undefined') { return; }
+
+    var eventId = null;
+    try {
+      eventId = new URLSearchParams(window.location.search).get('event');
+    } catch (e) { eventId = null; }
+
+    var ev = null;
+    if (eventId) {
+      for (var i = 0; i < window.MIT_EVENTS.length; i++) {
+        if (window.MIT_EVENTS[i].id === eventId) { ev = window.MIT_EVENTS[i]; break; }
+      }
+    }
+
+    if (!ev) {
+      root.innerHTML =
+        '<div class="ed-page">' +
+          '<div class="ed-container">' +
+            '<a href="etkinlikler.html" class="ed-back-link">&#8592; Tüm Etkinliklere Dön</a>' +
+            '<section class="ed-hero">' +
+              '<span class="ed-kicker">Etkinlik Detayı</span>' +
+              '<h1 class="ed-title" style="padding-left:0">Etkinlik Bulunamadı</h1>' +
+              '<p class="ed-summary">Aradığınız etkinlik mevcut değil veya kaldırılmış olabilir.</p>' +
+            '</section>' +
+            '<div style="text-align:center;padding:var(--space-xl) 0;">' +
+              '<a href="etkinlikler.html" class="btn btn--primary">Tüm Etkinlikler</a>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      return;
+    }
+
+    document.title = ev.title + ' — Made in Turan';
+
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) { metaDesc.setAttribute('content', ev.excerpt); }
+
+    root.innerHTML =
+      '<div class="ed-page">' +
+        '<div class="ed-container">' +
+
+          '<a href="etkinlikler.html" class="ed-back-link">&#8592; Tüm Etkinliklere Dön</a>' +
+
+          '<section class="ed-hero">' +
+            '<span class="ed-kicker">Etkinlik Detayı</span>' +
+            '<h1 class="ed-title">' + escHtml(ev.title) + '</h1>' +
+            '<div class="ed-meta">' + escHtml(ev.date) + '  ·  ' + escHtml(ev.location) + '</div>' +
+            '<span class="ed-category">' + escHtml(ev.category) + '</span>' +
+            '<p class="ed-summary">' + escHtml(ev.excerpt) + '</p>' +
+          '</section>' +
+
+          '<section class="ed-top-grid">' +
+            '<figure class="ed-cover">' +
+              '<img src="' + escAttr(ev.image) + '" alt="' + escAttr(ev.title) + '" loading="lazy" />' +
+            '</figure>' +
+            '<aside class="ed-sidebar">' +
+              '<div class="ed-info-card">' +
+                '<h2>Etkinlik Bilgileri</h2>' +
+                '<div class="ed-info-row">' +
+                  '<span class="ed-info-label">Tarih</span>' +
+                  '<strong class="ed-info-value">' + escHtml(ev.date) + '</strong>' +
+                '</div>' +
+                '<div class="ed-info-row">' +
+                  '<span class="ed-info-label">Lokasyon</span>' +
+                  '<strong class="ed-info-value">' + escHtml(ev.location) + '</strong>' +
+                '</div>' +
+                '<div class="ed-info-row">' +
+                  '<span class="ed-info-label">Kategori</span>' +
+                  '<strong class="ed-info-value">' + escHtml(ev.category) + '</strong>' +
+                '</div>' +
+                '<div class="ed-info-row">' +
+                  '<span class="ed-info-label">Durum</span>' +
+                  '<strong class="ed-info-value">' + escHtml(ev.status) + '</strong>' +
+                '</div>' +
+              '</div>' +
+            '</aside>' +
+          '</section>' +
+
+          '<section class="ed-main">' +
+            '<h2>Etkinlik Hakkında</h2>' +
+            '<p>' + escHtml(ev.description) + '</p>' +
+          '</section>' +
+
+          '<section class="ed-cta">' +
+            '<h2 class="ed-cta-title">Bu etkinlik hakkında iş birliği fırsatlarını değerlendirmek ister misiniz?</h2>' +
+            '<div class="ed-cta-actions">' +
+              '<a href="basvuru.html" class="btn btn--primary">Başvuru Formu</a>' +
+              '<a href="etkinlikler.html" class="btn btn--outline">Tüm Etkinliklere Dön</a>' +
+            '</div>' +
+          '</section>' +
+
+        '</div>' +
+      '</div>';
+
+  })();
+  </script>
+
+</body>
+</html>

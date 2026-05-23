@@ -246,4 +246,204 @@
     }
   }
 
+
+  /* ----------------------------------------------------------
+     7. TEMSİLCİLİK HARİTA — hotspot toggle + mobil accordion
+  ---------------------------------------------------------- */
+  const mapHotspotTR  = document.getElementById('map-hotspot-tr');
+  const mapCalloutTR  = document.getElementById('map-callout-tr');
+  const repPanelTR    = document.getElementById('turkiye-representatives');
+
+  if (mapHotspotTR && repPanelTR) {
+    mapHotspotTR.addEventListener('click', function () {
+      const isActive = mapHotspotTR.classList.contains('is-active');
+
+      /* Şu an sadece TR hotspot var; birden fazla olunca burası döngüye alınır */
+      mapHotspotTR.classList.toggle('is-active', !isActive);
+      mapHotspotTR.setAttribute('aria-pressed', String(!isActive));
+
+      if (mapCalloutTR) {
+        mapCalloutTR.classList.toggle('is-active', !isActive);
+      }
+
+      repPanelTR.classList.toggle('is-open', !isActive);
+      repPanelTR.setAttribute('aria-hidden', String(isActive));
+    });
+  }
+
+  /* Mobil accordion */
+  const mobileRegionTR = document.getElementById('mobile-region-tr');
+  const mobileTRReps   = document.getElementById('mobile-tr-reps');
+
+  if (mobileRegionTR && mobileTRReps) {
+    mobileRegionTR.addEventListener('click', function () {
+      const isExpanded = mobileRegionTR.getAttribute('aria-expanded') === 'true';
+      const chevron    = mobileRegionTR.querySelector('.mobile-region-chevron');
+
+      mobileRegionTR.setAttribute('aria-expanded', String(!isExpanded));
+      mobileTRReps.classList.toggle('is-open', !isExpanded);
+      if (chevron) chevron.classList.toggle('is-open', !isExpanded);
+    });
+  }
+
+
+  /* ----------------------------------------------------------
+     8. HARITA TEMSİLCİLİK — tooltip + tıkla/panel
+  ---------------------------------------------------------- */
+  console.log('[MIT] temsilcilikler module loaded');
+
+  var _panel     = document.querySelector('#country-panel');
+  var _tooltip   = document.getElementById('map-tooltip');
+  var _countries = document.querySelectorAll('.map-country[data-country]');
+
+  console.log('[MIT] country count:', _countries.length);
+  console.log('[MIT] panel:', _panel);
+
+  if (_panel && _countries.length > 0) {
+
+    var COUNTRY_DATA = {
+      turkiye: {
+        title: 'Türkiye Temsilcilikleri',
+        desc:  'Türkiye genelinde iş geliştirme ve bölgesel temsil ağı.',
+        code:  'TR',
+        reps: [
+          { name: 'Suat Ebçin',    role: 'Ankara Temsilcisi',                  email: 'suatebcin@madeinturan.com'    },
+          { name: 'Gökhan Öztürk', role: 'Başkan Yrd. / İzmir İl Temsilcisi',  email: 'gokhanozturk@madeinturan.com' },
+          { name: 'Berkan Akıllı', role: 'Başkan Yrd. / Ankara İl Temsilcisi', email: 'berkanakilli@madeinturan.com' },
+          { name: 'Serdar Dilmen', role: 'İstanbul Temsilcisi',                 email: 'serdardilmen@madeinturan.com' }
+        ]
+      }
+    };
+
+    var SOON_COUNTRIES = {
+      azerbaycan:   { name: 'Azerbaycan',   code: 'AZ' },
+      kazakistan:   { name: 'Kazakistan',   code: 'KZ' },
+      ozbekistan:   { name: 'Özbekistan',   code: 'UZ' },
+      kirgizistan:  { name: 'Kırgızistan',  code: 'KG' },
+      turkmenistan: { name: 'Türkmenistan', code: 'TM' },
+      bae:          { name: 'Dubai / BAE',  code: 'AE' },
+      kktc:         { name: 'KKTC',         code: 'KK' }
+    };
+
+    var activeKey = null;
+
+    function getInitials(name) {
+      return name.split(' ').map(function (p) { return p[0]; }).join('').slice(0, 2).toUpperCase();
+    }
+
+    function renderPanel(key) {
+      var data = COUNTRY_DATA[key];
+      var soon = SOON_COUNTRIES[key];
+
+      if (!data && !soon) { return; }
+
+      if (data) {
+        var repsHTML = data.reps.map(function (rep) {
+          return '<div class="country-rep-card">' +
+            '<div class="country-rep-avatar">' + getInitials(rep.name) + '</div>' +
+            '<div class="country-rep-name">'   + rep.name  + '</div>' +
+            '<div class="country-rep-role">'   + rep.role  + '</div>' +
+            '<a class="country-rep-email" href="mailto:' + rep.email + '">' + rep.email + '</a>' +
+            '</div>';
+        }).join('');
+
+        _panel.innerHTML =
+          '<div class="country-panel-header">' +
+            '<span class="country-panel-badge">' + data.code  + '</span>' +
+            '<h3 class="country-panel-title">'   + data.title + '</h3>' +
+            '<span class="country-panel-desc">'  + data.desc  + '</span>' +
+          '</div>' +
+          '<div class="country-panel-body">' +
+            '<div class="country-rep-list">' + repsHTML + '</div>' +
+          '</div>';
+      } else {
+        _panel.innerHTML =
+          '<div class="country-panel-header">' +
+            '<span class="country-panel-badge">' + soon.code + '</span>' +
+            '<h3 class="country-panel-title">'   + soon.name + ' Temsilcilikleri</h3>' +
+          '</div>' +
+          '<div class="country-panel-soon">' +
+            '<div class="country-panel-soon-icon">&#127760;</div>' +
+            '<div class="country-panel-soon-text">Bu bölgeye ait temsilcilik bilgileri hazırlanıyor.</div>' +
+          '</div>';
+      }
+
+      /* Animasyonu her tıklamada yeniden tetikle */
+      _panel.classList.remove('is-visible');
+      void _panel.offsetHeight;
+      _panel.classList.add('is-visible');
+    }
+
+    function setActiveCountry(key) {
+      /* Önceki aktif: desktop path + mobil kart */
+      if (activeKey) {
+        var prevPath = document.querySelector('.map-country[data-country="' + activeKey + '"]');
+        var prevCard = document.querySelector('.mobile-country-card[data-country="' + activeKey + '"]');
+        if (prevPath) { prevPath.classList.remove('is-active'); }
+        if (prevCard) { prevCard.classList.remove('is-active'); }
+      }
+      activeKey = key;
+      /* Yeni aktif: desktop path + mobil kart */
+      var newPath = document.querySelector('.map-country[data-country="' + key + '"]');
+      var newCard = document.querySelector('.mobile-country-card[data-country="' + key + '"]');
+      if (newPath) { newPath.classList.add('is-active'); }
+      if (newCard) { newCard.classList.add('is-active'); }
+      renderPanel(key);
+    }
+
+    _countries.forEach(function (country) {
+
+      country.addEventListener('mouseenter', function () {
+        if (!_tooltip) { return; }
+        _tooltip.textContent = country.getAttribute('data-country-name');
+        _tooltip.classList.add('is-visible');
+      });
+
+      country.addEventListener('mousemove', function (e) {
+        if (!_tooltip) { return; }
+        _tooltip.style.left = e.clientX + 'px';
+        _tooltip.style.top  = e.clientY + 'px';
+      });
+
+      country.addEventListener('mouseleave', function () {
+        if (!_tooltip) { return; }
+        _tooltip.classList.remove('is-visible');
+      });
+
+      country.addEventListener('click', function () {
+        console.log('[MIT] desktop clicked:', this.dataset.country);
+        setActiveCountry(this.dataset.country);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            _panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+        });
+      });
+    });
+
+    /* Mobil ülke kartları */
+    var _mobileCards = document.querySelectorAll('.mobile-country-card[data-country]');
+    console.log('[MIT] mobile card count:', _mobileCards.length);
+
+    _mobileCards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        console.log('[MIT] mobile clicked:', this.dataset.country);
+        setActiveCountry(this.dataset.country);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            _panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+        });
+      });
+    });
+
+    /* Sayfa yüklenince Türkiye default aktif */
+    if (document.querySelector('.map-country[data-country="turkiye"]') ||
+        document.querySelector('.mobile-country-card[data-country="turkiye"]')) {
+      setActiveCountry('turkiye');
+    }
+  }
+
+
+
 })();
